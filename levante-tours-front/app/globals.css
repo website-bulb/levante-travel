@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/* ─── Design tokens ─── */
+:root {
+  /* Colors */
+  --color-primary: #0a2749;
+  --color-background: #fffefa;
+  --color-foreground: #0a2749;
+
+  /* Fonts */
+  --font: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Spacing scale */
+  --dimensions-spacing-0: 0px;
+  --dimensions-spacing-1: 4px;
+  --dimensions-spacing-1-5: 6px;
+  --dimensions-spacing-2: 8px;
+  --dimensions-spacing-3: 12px;
+  --dimensions-spacing-4: 16px;
+
+  /* Radii */
+  --dimensions-radius-rounded-3xl: 24px;
+  --dimensions-radius-rounded-4xl: 32px;
+
+  /* Font sizes */
+  --dimensions-font-text-xs: 12px;
+  --dimensions-font-text-sm: 14px;
+  --dimensions-font-text-2xl: 24px;
+
+  /* Line heights */
+  --dimensions-leading-text-xs: 16px;
+  --dimensions-leading-text-sm: 20px;
+
+  /* Letter spacing */
+  --letter-spacing: 0px;
+}
+
+/* ─── Base styles ─── */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), Arial, sans-serif;
+}
