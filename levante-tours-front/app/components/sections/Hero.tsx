@@ -78,7 +78,7 @@ export default function Hero() {
 
       {/* DESKTOP headline */}
       <div
-        className="hidden md:flex absolute pointer-events-none select-none items-baseline gap-5"
+        className="hidden md:flex absolute pointer-events-none select-none items-baseline gap-4"
         style={{ left: "clamp(0px, 4.8vw, 61px)", top: "clamp(160px, 30vh, 240px)", zIndex: 1 }}
       >
         <div style={{ width: ANIMATED_WORD_WIDTH, flexShrink: 0 }}>
@@ -88,7 +88,7 @@ export default function Hero() {
             letterDuration={0.5}
             staggerDelay={0.06}
             exitStaggerDelay={0.04}
-            className="min-h-0 min-w-0 items-start justify-end pr-30"
+            className="min-h-0 min-w-0 items-start justify-end pr-35"
             textClassName="text-white !font-extrabold !leading-none tracking-tight !text-[clamp(48px,7.8vw,100px)] justify-end"
           />
         </div>
