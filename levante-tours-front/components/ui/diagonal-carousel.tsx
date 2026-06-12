@@ -69,6 +69,7 @@ export function DiagonalCarousel({
     clamp(defaultActiveIndex, 0, maxIndex)
   );
   const currentIndex = clamp(activeIndex ?? uncontrolledIndex, 0, maxIndex);
+  const touchStartX = React.useRef<number | null>(null);
   const safeSlideSize = Math.max(120, slideSize);
   const safeInactiveScale = clamp(inactiveScale, 0.35, 1);
 
@@ -112,7 +113,16 @@ export function DiagonalCarousel({
       className={cn("relative isolate h-full w-full", className)}
       {...props}
     >
-      <div className={cn("absolute inset-0", viewportClassName)}>
+      <div
+        className={cn("absolute inset-0", viewportClassName)}
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          if (touchStartX.current === null) return;
+          const delta = touchStartX.current - e.changedTouches[0].clientX;
+          if (Math.abs(delta) > 40) selectSlide(currentIndex + (delta > 0 ? 1 : -1));
+          touchStartX.current = null;
+        }}
+      >
         <motion.div
           className="absolute left-1/2 top-[30%] flex w-fit"
           animate={{ x: -(currentIndex * safeSlideSize + safeSlideSize / 2) }}
