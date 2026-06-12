@@ -86,7 +86,6 @@ export default function ComingSoon() {
               </div>
               <Button
                 className="shrink-0 bg-[#fffefa] text-[#0a2749] text-sm font-medium rounded-full px-4 h-9 min-w-fit"
-                variant="flat"
                 size="sm"
               >
                 Register interest

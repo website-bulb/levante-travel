@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import { Briefcase, Car, Clock } from "lucide-react";
 
 interface ServiceCard {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   description: string;
 }

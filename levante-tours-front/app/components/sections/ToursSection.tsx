@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Tabs } from "@heroui/react";
+import { Tabs, Tab } from "@heroui/react";
 import { DiagonalCarousel, type DiagonalCarouselItem } from "@/components/ui/diagonal-carousel";
 
 const TOUR_CATEGORIES = [
@@ -61,24 +61,16 @@ export default function ToursSection() {
           <Tabs
             selectedKey={activeCategory}
             onSelectionChange={(key) => setActiveCategory(key as string)}
+            aria-label="Tour categories"
+            classNames={{
+              tabList: "bg-[#e5f3f9] rounded-full p-1 gap-0 border-none shadow-none",
+              tab: "rounded-full px-4 py-2 text-sm font-medium text-[#71717a] data-[selected=true]:text-[#0a2749] whitespace-nowrap",
+              cursor: "bg-white rounded-full shadow-[0px_2px_8px_rgba(0,0,0,0.06)]",
+            }}
           >
-            <Tabs.ListContainer>
-              <Tabs.List
-                aria-label="Tour categories"
-                className="w-fit mx-auto bg-[#e5f3f9] rounded-full p-1 gap-0 border-none shadow-none"
-              >
-                {TOUR_CATEGORIES.map((cat) => (
-                  <Tabs.Tab
-                    key={cat.key}
-                    id={cat.key}
-                    className="rounded-full px-4 py-2 text-sm font-medium text-[#71717a] data-[selected=true]:text-[#0a2749] whitespace-nowrap"
-                  >
-                    {cat.label}
-                    <Tabs.Indicator className="bg-white rounded-full shadow-[0px_2px_8px_rgba(0,0,0,0.06)]" />
-                  </Tabs.Tab>
-                ))}
-              </Tabs.List>
-            </Tabs.ListContainer>
+            {TOUR_CATEGORIES.map((cat) => (
+              <Tab key={cat.key} title={cat.label} />
+            ))}
           </Tabs>
         </div>
 
